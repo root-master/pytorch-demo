@@ -6,7 +6,7 @@ import torch.nn.functional as F
 import torchvision.transforms as T
 import torch.optim as optim
 from torchvision import datasets
-
+import time
 class Net(nn.Module):
     '''neural network (model)'''
     def __init__(self):
@@ -136,4 +136,7 @@ def main():
         test(args, model, device, test_loader)
 
 if __name__ == '__main__':
+    start_time = time.time()
     main()
+    end_time = time.time()
+    print(end_time-start_time)
